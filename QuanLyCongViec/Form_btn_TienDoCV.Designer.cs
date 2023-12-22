@@ -43,68 +43,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 44);
+            this.label1.Location = new System.Drawing.Point(34, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(128, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Công Việc";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 148);
+            this.label2.Location = new System.Drawing.Point(34, 222);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
+            this.label2.Size = new System.Drawing.Size(204, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phần trăm hoàn thành";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 92);
+            this.label3.Location = new System.Drawing.Point(34, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 16);
+            this.label3.Size = new System.Drawing.Size(138, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Ngày cập nhật";
             // 
             // cmbID_CongViec
             // 
             this.cmbID_CongViec.FormattingEnabled = true;
-            this.cmbID_CongViec.Location = new System.Drawing.Point(197, 36);
+            this.cmbID_CongViec.Location = new System.Drawing.Point(271, 54);
+            this.cmbID_CongViec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbID_CongViec.Name = "cmbID_CongViec";
-            this.cmbID_CongViec.Size = new System.Drawing.Size(121, 24);
+            this.cmbID_CongViec.Size = new System.Drawing.Size(165, 32);
             this.cmbID_CongViec.TabIndex = 2;
             // 
             // dtpNgayCapNhat
             // 
             this.dtpNgayCapNhat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayCapNhat.Location = new System.Drawing.Point(197, 87);
+            this.dtpNgayCapNhat.Location = new System.Drawing.Point(271, 130);
+            this.dtpNgayCapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNgayCapNhat.Name = "dtpNgayCapNhat";
-            this.dtpNgayCapNhat.Size = new System.Drawing.Size(121, 22);
+            this.dtpNgayCapNhat.Size = new System.Drawing.Size(165, 29);
             this.dtpNgayCapNhat.TabIndex = 3;
             // 
             // txtPhanTramHoanThanh
             // 
-            this.txtPhanTramHoanThanh.Location = new System.Drawing.Point(197, 142);
+            this.txtPhanTramHoanThanh.Location = new System.Drawing.Point(271, 213);
+            this.txtPhanTramHoanThanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhanTramHoanThanh.Name = "txtPhanTramHoanThanh";
-            this.txtPhanTramHoanThanh.Size = new System.Drawing.Size(121, 22);
+            this.txtPhanTramHoanThanh.Size = new System.Drawing.Size(165, 29);
             this.txtPhanTramHoanThanh.TabIndex = 4;
             // 
             // dgv_btn_TienDoCV
             // 
             this.dgv_btn_TienDoCV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_btn_TienDoCV.Location = new System.Drawing.Point(352, 12);
+            this.dgv_btn_TienDoCV.Location = new System.Drawing.Point(484, 18);
+            this.dgv_btn_TienDoCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_btn_TienDoCV.Name = "dgv_btn_TienDoCV";
             this.dgv_btn_TienDoCV.RowHeadersWidth = 51;
             this.dgv_btn_TienDoCV.RowTemplate.Height = 24;
-            this.dgv_btn_TienDoCV.Size = new System.Drawing.Size(321, 306);
+            this.dgv_btn_TienDoCV.Size = new System.Drawing.Size(441, 459);
             this.dgv_btn_TienDoCV.TabIndex = 5;
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(35, 205);
+            this.btnCapNhat.Location = new System.Drawing.Point(48, 308);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(84, 33);
+            this.btnCapNhat.Size = new System.Drawing.Size(116, 50);
             this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
@@ -112,18 +120,20 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(208, 205);
+            this.btnThoat.Location = new System.Drawing.Point(286, 308);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(84, 33);
+            this.btnThoat.Size = new System.Drawing.Size(116, 50);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // Form_btn_TienDoCV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 330);
+            this.ClientSize = new System.Drawing.Size(942, 495);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.dgv_btn_TienDoCV);
@@ -133,6 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_btn_TienDoCV";
             this.Text = "Form_btn_TienDoCV";
             this.Load += new System.EventHandler(this.Form_btn_TienDoCV_Load);

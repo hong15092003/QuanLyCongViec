@@ -43,8 +43,13 @@ namespace QuanLyCongViec
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            kn.themTienDo(int.Parse(cmbID_CongViec.Text),dtpNgayCapNhat.Value);
+            kn.themTienDo(int.Parse(txtPhanTramHoanThanh.Text),dtpNgayCapNhat.Value,cmbID_CongViec.Text);
             loaddulieu();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            kn.thoat(this);
         }
     }
 }

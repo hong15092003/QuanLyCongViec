@@ -321,18 +321,38 @@ namespace QuanLyCongViec
 
 
         // Thêm tiến độ:
-        public void themTienDo(int PhanTramHoanThanh, DateTime NgayCapNhat)
+        public void themTienDo(int PhanTramHoanThanh, DateTime NgayCapNhat, String ID_CongViec)
         {
-            string sql = "INSERT INTO TienDo (PhanTramHoanThanh,NgayCapNhat) " +
-                         "VALUES (@PhanTramHoanThanh,@NgayCapNhat)";
-
+            string sql = "INSERT INTO TienDo (CongViec_ID,ID_TienDo,PhanTramHoanThanh,NgayCapNhat) " +
+                         "VALUES (@CongViec_ID,@ID_TienDo,@PhanTramHoanThanh,@NgayCapNhat)";
+            moKetNoi();
             using (SqlCommand scm = new SqlCommand(sql, cnn))
             {
+                scm.Parameters.AddWithValue("@CongViec_ID", ID_CongViec );
+                scm.Parameters.AddWithValue("@ID_TienDo", getID_TD());
                 scm.Parameters.AddWithValue("@PhanTramhoanThanh", PhanTramHoanThanh);
                 scm.Parameters.AddWithValue("@NgayCapNhat", NgayCapNhat);
 
                 scm.ExecuteNonQuery();
             }
+            if(PhanTramHoanThanh == 100)
+            {
+                string cmd = $"UPDATE CongViec SET  TrangThai = 'Đã Hoàn Thành' WHERE ID_CongViec = {ID_CongViec}";
+                using (SqlCommand scm = new SqlCommand(cmd, cnn))
+                {
+                    scm.ExecuteNonQuery();
+                }
+            }
+            dongKetNoi();
+        }
+        public int getID_TD()
+        {
+
+            // Replace "YourTableName" with the actual table name and "YourIDColumnName" with the actual ID column name
+            string query = "SELECT MAX(ID_TienDo) FROM TienDo";
+            //
+            int newID = GetNextID_CV(connectionString, query);
+            return newID;
         }
 
         public void thoat(Form form)
