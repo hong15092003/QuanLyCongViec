@@ -57,12 +57,14 @@ namespace QuanLyCongViec
         private void HandleCellContentClickEvent()
         {
             dgv_btn_QLCV.CellContentClick += dgv_btn_QLCV_CellContentClick;
+             ID_NhanVien_SelectedIndexChanged();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            kn.themCV(txtTenCongViec.Text, txtNhomCongViec.Text, dtpNgayBatDau.Value, dtpNgayKetThuc.Value, cmbTrangThai.Text);
+            kn.themCV(txtTenCongViec.Text, txtNhomCongViec.Text, dtpNgayBatDau.Value, dtpNgayKetThuc.Value, cmbTrangThai.Text, ID_NhanVien.Text);
             LoadDuLieu();
+            kn.ClearAllTextBoxes(this);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -97,6 +99,12 @@ namespace QuanLyCongViec
         {
             this.Close();
 
+        }
+
+        private void ID_NhanVien_SelectedIndexChanged()
+        {
+            string cmd = "Select ID_NhanVien from NhanVien";
+            kn.AddListToComboBox(ID_NhanVien,cmd);
         }
     }
 }

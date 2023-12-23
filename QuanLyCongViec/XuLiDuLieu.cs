@@ -159,6 +159,10 @@ namespace QuanLyCongViec
                 {
                     ((TextBox)c).Clear();
                 }
+                else if (c is ComboBox)
+                {
+                    ((ComboBox)c).Text = "";
+                }
                 else
                 {
                     ClearAllTextBoxes(c);
@@ -230,10 +234,10 @@ namespace QuanLyCongViec
         }
 
         // Thêm công việc:
-        public void themCV(string TenCongViec, string NhomCongViec, DateTime NgayBatDau, DateTime NgayKetThuc, string TrangThai)
+        public void themCV(string TenCongViec, string NhomCongViec, DateTime NgayBatDau, DateTime NgayKetThuc, string TrangThai, string ID_NhanVien)
         {
-            string sql = "INSERT INTO CongViec (ID_CongViec, TenCongViec, NhomCongViec, NgayBatDau, NgayKetThuc, TrangThai) " +
-                         "VALUES (@ID_CongViec, @TenCongViec, @NhomCongViec, @NgayBatDau, @NgayKetThuc, @TrangThai)";
+            string sql = "INSERT INTO CongViec (ID_CongViec, TenCongViec, NhomCongViec, NgayBatDau, NgayKetThuc, TrangThai, NhanVien_ID) " +
+                         "VALUES (@ID_CongViec, @TenCongViec, @NhomCongViec, @NgayBatDau, @NgayKetThuc, @TrangThai, @ID_NhanVien)";
 
             using (SqlCommand scm = new SqlCommand(sql, cnn))
             {
@@ -243,10 +247,10 @@ namespace QuanLyCongViec
                 scm.Parameters.AddWithValue("@NgayBatDau", NgayBatDau);
                 scm.Parameters.AddWithValue("@NgayKetThuc", NgayKetThuc);
                 scm.Parameters.AddWithValue("@TrangThai", TrangThai);
+                scm.Parameters.AddWithValue("@ID_NhanVien", int.Parse( ID_NhanVien));
 
                 scm.ExecuteNonQuery();
             }
-            clearTextBox_CV(TenCongViec, NhomCongViec, NgayBatDau, NgayKetThuc, TrangThai);
         }
 
         // Sửa công việc:
@@ -311,6 +315,7 @@ namespace QuanLyCongViec
         }
         public void AddListToComboBox(ComboBox comboBox, String cmd)
         {
+            comboBox.Items.Clear();
             List<int> listID = getListID(cmd);
 
             foreach (int id in listID)
